@@ -21,7 +21,7 @@ Java/JDBC based Oracle drivers are not in scope of this tool.
 
 Problems with alias resolution, typically related to `tnsnames.ora` file, are not in scope of this tool. 
 
-Problems with ODBC DSN Data Source definitinos are not in scope of this tool. 
+Problems with ODBC DSN Data Source definitions are not in scope of this tool. 
 
 
 # How to use it
