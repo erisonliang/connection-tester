@@ -155,4 +155,3 @@ ERROR [IM004] [Microsoft][ODBC Driver Manager] Driver's SQLAllocHandle on SQL_HA
 Did not find any ODBC driver for "Devart"
 Did not find any ODBC driver for "Progress"
 Did not find any ODBC driver for "CData"
-
