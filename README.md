@@ -12,7 +12,7 @@ Installing an Oracle client can be a challenge. Sometimes you install the Oracle
 - Oracle client and *"Oracle Data Provider for .NET Driver"* are not the same version. The versions have to match **exactly**
 - The required driver is not installed. 
 
-   Your application may use a certain driver - you see there are many of them - but the requied driver is not installed. ODBC or ODP.NET providers are not included in bare Oracle Instant client. 
+   Your application may use a certain driver - you see there are many of them - but the required driver is not installed. ODBC or ODP.NET providers are not included in bare Oracle Instant client. 
 
    Note, in 12.1 and later ODP.NET is not added to GAC anymore, see [Installation Does Not Register Oracle Data Provider for .Net in the GAC](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2272241_1.html). You need to register the assembly manually.
 
