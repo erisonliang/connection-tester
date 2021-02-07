@@ -1,0 +1,158 @@
+c:\>ConnectionTester <username>/<password>@<database> +all
+
+Running Test on 64 bit
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET"
+
+Cannot find any "oci.dll" file. Please check your PATH Environment variable
+
+Try to connect via "Oracle Data Provider for .NET Managed Driver" (ODP.NET 4.0 Managed Driver)
+
+Try to load Oracle.ManagedDataAccess.dll (Version 4.121.*.* -> Version 4.121.2.0)
+Assembly: Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.ManagedDataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Provider for OLE DB"
+
+DLL-Location: c:\oracle\product\12.1\Client_x64\bin\OraOLEDB12.DLL
+Could not find DLL at c:\oracle\product\12.1\Client_x64\bin\OraOLEDB12.DLL
+
+************************************************************
+
+"Microsoft OLE DB Provider for Oracle" is only available for x86 architecture
+
+************************************************************
+
+Try to connect via "dotConnect for Oracle" from Devart (a.k.a. CoreLab)
+
+Could not load file or assembly 'Devart.Data.Oracle, Version=5.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "dotConnect Universal" from Devart (a.k.a. CoreLab)
+
+Could not load file or assembly 'Devart.Data.Universal, Version=2.10.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "Progress DataDirect Connect for ADO.NET"
+
+Could not load file or assembly 'DDTek.Oracle, Version=4.2.0.0, Culture=neutral, PublicKeyToken=c84cd5c63851e072' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "CData ADO.NET Provider for Oracle OCI"
+
+Could not load file or assembly 'System.Data.CData.OracleOci, Version=19.0.0.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via ODBC Driver "Oracle in OraClient12Home1"
+
+DLL-Location: c:\oracle\product\12.1\Client_x64\BIN\SQORA32.DLL
+Could not find DLL at c:\oracle\product\12.1\Client_x64\BIN\SQORA32.DLL
+
+************************************************************
+
+Did not find any ODBC driver for "Devart"
+Did not find any ODBC driver for "Progress"
+Did not find any ODBC driver for "CData"
+
+Running Test on 32 bit
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET"
+
+Cannot find any "oci.dll" file. Please check your PATH Environment variable
+
+Try to connect via "Oracle Data Provider for .NET Managed Driver" (ODP.NET 4.0 Managed Driver)
+
+Try to load Oracle.ManagedDataAccess.dll (Version 4.121.*.* -> Version 4.121.2.0)
+Assembly: Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.ManagedDataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Provider for OLE DB"
+
+DLL-Location: c:\oracle\product\12.1\Client_x86\bin\OraOLEDB12.DLL
+Could not find DLL at c:\oracle\product\12.1\Client_x86\bin\OraOLEDB12.DLL
+
+************************************************************
+
+Try to connect via "Microsoft OLE DB Provider for Oracle"
+Note: This provider has been deprecated by Microsoft!
+
+DLL-Location: C:\Program Files (x86)\Common Files\System\Ole DB\msdaora.dll
+Version: 10.0.18362.900 (WinBuild.160101.0800)
+Connection Type: System.Data.OleDb.OleDbConnection
+Oracle client and networking components were not found. These components are supplied by Oracle Corporation and are part of the Oracle Version 7.3.3 or later client software installation.
+
+Provider is unable to function until these components are installed.
+
+************************************************************
+
+Try to connect via "dotConnect for Oracle" from Devart (a.k.a. CoreLab)
+
+Could not load file or assembly 'Devart.Data.Oracle, Version=5.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "dotConnect Universal" from Devart (a.k.a. CoreLab)
+
+Could not load file or assembly 'Devart.Data.Universal, Version=2.10.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "Progress DataDirect Connect for ADO.NET"
+
+Could not load file or assembly 'DDTek.Oracle, Version=4.2.0.0, Culture=neutral, PublicKeyToken=c84cd5c63851e072' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via "CData ADO.NET Provider for Oracle OCI"
+
+Could not load file or assembly 'System.Data.CData.OracleOci, Version=19.0.0.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf' or one of its dependencies. The system cannot find the file specified.
+
+
+************************************************************
+
+Try to connect via ODBC Driver "Oracle in OraClient12Home1_32bit"
+
+DLL-Location: c:\oracle\product\12.1\Client_x86\BIN\SQORA32.DLL
+Could not find DLL at c:\oracle\product\12.1\Client_x86\BIN\SQORA32.DLL
+
+************************************************************
+
+Try to connect via ODBC Driver "Microsoft ODBC for Oracle"
+
+Note: This driver has been deprecated by Microsoft!
+DLL-Location: C:\WINDOWS\system32\msorcl32.dll -> C:\WINDOWS\SysWOW64\msorcl32.dll
+Version: 10.0.18362.1 (WinBuild.160101.0800)
+Connection Type: System.Data.Odbc.OdbcConnection
+ERROR [IM004] [Microsoft][ODBC Driver Manager] Driver's SQLAllocHandle on SQL_HANDLE_ENV failed
+
+************************************************************
+
+Did not find any ODBC driver for "Devart"
+Did not find any ODBC driver for "Progress"
+Did not find any ODBC driver for "CData"
+
