@@ -1,0 +1,173 @@
+C:\>ConnectionTester.exe <username>/<password>@<database>
+
+Running Test on 64 bit
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET"
+
+Found C:\Windows\system32\ora121\bin\oci.dll Version: 12.1.0.0.0 Production
+
+Oracle Data Provider for .NET (ODP.NET 1.x) not available in Oracle version 12.1, it was supported only up to Oracle 11.1
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET" (ODP.NET 2.0)
+
+Try to load Oracle.DataAccess.dll (Version 2.102.*.* -> Version 2.121.2.0)
+Assembly: Oracle.DataAccess, Version=2.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=Amd64
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.DataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET" (ODP.NET 4.0)
+
+Try to load Oracle.DataAccess.dll (Version 4.112.*.* -> Version 4.121.2.0)
+Assembly: Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=Amd64
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.DataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET Managed Driver" (ODP.NET 4.0 Managed Driver)
+
+Try to load Oracle.ManagedDataAccess.dll (Version 4.121.*.* -> Version 4.121.2.0)
+Assembly: Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.ManagedDataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Provider for OLE DB"
+
+DLL-Location: c:\oracle\product\12.1\Client_x64\bin\OraOLEDB12.DLL
+Version: 12.1.0.2.0
+Connection Type: System.Data.OleDb.OleDbConnection
+Connection successful
+
+************************************************************
+
+"Microsoft OLE DB Provider for Oracle" is only available for x86 architecture
+
+************************************************************
+
+Try to connect via "Microsoft .NET Framework Data Provider for Oracle"
+Note: This provider has been deprecated by Microsoft!
+
+Assembly: System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=Amd64
+DLL-Location: Loaded from GAC
+Connection Type: System.Data.OracleClient.OracleConnection
+Connection successful
+
+************************************************************
+
+Try to connect via ODBC Driver "Oracle in OraClient12Home1"
+
+DLL-Location: c:\oracle\product\12.1\Client_x64\BIN\SQORA32.DLL
+Version: 12.1.0.2.0
+Connection Type: System.Data.Odbc.OdbcConnection
+Connection successful
+
+************************************************************
+
+
+Running Test on 32 bit
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET"
+
+Found C:\Windows\system32\ora121\bin\oci.dll -> C:\WINDOWS\SysWOW64\ora121\bin\oci.dll Version: 12.1.0.0.0 Production
+
+Oracle Data Provider for .NET (ODP.NET 1.x) not available in Oracle version 12.1, it was supported only up to Oracle 11.1
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET" (ODP.NET 2.0)
+
+Try to load Oracle.DataAccess.dll (Version 2.102.*.* -> Version 2.121.2.0)
+Assembly: Oracle.DataAccess, Version=2.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=X86
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.DataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET" (ODP.NET 4.0)
+
+Try to load Oracle.DataAccess.dll (Version 4.112.*.* -> Version 4.121.2.0)
+Assembly: Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=X86
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.DataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Data Provider for .NET Managed Driver" (ODP.NET 4.0 Managed Driver)
+
+Try to load Oracle.ManagedDataAccess.dll (Version 4.121.*.* -> Version 4.121.2.0)
+Assembly: Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL
+DLL-Location: Loaded from GAC
+Connection Type: Oracle.ManagedDataAccess.Client.OracleConnection
+Connection successful
+
+
+************************************************************
+
+Try to connect via "Oracle Provider for OLE DB"
+
+DLL-Location: c:\oracle\product\12.1\Client_x86\bin\OraOLEDB12.DLL
+Version: 12.1.0.2.0
+Connection Type: System.Data.OleDb.OleDbConnection
+Connection successful
+
+************************************************************
+
+Try to connect via "Microsoft OLE DB Provider for Oracle"
+Note: This provider has been deprecated by Microsoft!
+
+DLL-Location: C:\Program Files (x86)\Common Files\System\Ole DB\msdaora.dll
+Version: 10.0.18362.900 (WinBuild.160101.0800)
+Connection Type: System.Data.OleDb.OleDbConnection
+Connection successful
+
+************************************************************
+
+Try to connect via "Microsoft .NET Framework Data Provider for Oracle"
+Note: This provider has been deprecated by Microsoft!
+
+Assembly: System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=X86
+DLL-Location: Loaded from GAC
+Connection Type: System.Data.OracleClient.OracleConnection
+Connection successful
+
+************************************************************
+
+Try to connect via ODBC Driver "Oracle in OraClient12Home1_32bit"
+
+DLL-Location: c:\oracle\product\12.1\Client_x86\BIN\SQORA32.DLL
+Version: 12.1.0.2.0
+Connection Type: System.Data.Odbc.OdbcConnection
+Connection successful
+
+************************************************************
+
+Try to connect via ODBC Driver "Microsoft ODBC for Oracle"
+
+Note: This driver has been deprecated by Microsoft!
+DLL-Location: C:\WINDOWS\system32\msorcl32.dll -> C:\WINDOWS\SysWOW64\msorcl32.dll
+Version: 10.0.18362.1 (WinBuild.160101.0800)
+Connection Type: System.Data.Odbc.OdbcConnection
+Connection successful
+
+************************************************************
+
