@@ -83,7 +83,7 @@ ConnectionTester_x86.exe scott/tiger@ora1
 
 - ODBC Driver from Oracle
 - ODBC driver from Microsoft (only for 32bit, [deprecated](https://msdn.microsoft.com/en-us/library/ms713590%28v=vs.85%29.aspx), does not work anymore with Oracle Client 18c or newer)
-- ODBC driver from [Devart](https://www.devart.com/odbc/oracle/
+- ODBC driver from [Devart](https://www.devart.com/odbc/oracle/)
 - ODBC driver from [Progress](https://www.progress.com/odbc/oracle-database)
 - ODBC Oracle Driver from [Easysoft](https://www.easysoft.com/products/data_access/odbc_oracle_driver/index.html)
 - ODBC Oracle WP Driver from Easysoft
