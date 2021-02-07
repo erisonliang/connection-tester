@@ -170,4 +170,3 @@ Connection Type: System.Data.Odbc.OdbcConnection
 Connection successful
 
 ************************************************************
-
