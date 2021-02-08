@@ -92,6 +92,10 @@ ConnectionTester_x86.exe scott/tiger@ora1
 
 All ODBC drviers are tested directly, i.e. "DSN-less". It only tests the actual ODBC driver, not the ODBC DSN Data Soucre. Thus no DSN entry is required in your ODBC Data Source Administrator.
 
+## Known issues
+
+When ODBC driver "Microsoft ODBC for Oracle" for 32-bit is tested and fails then the program terminates immediatly with an error. I don't managed to catch this error by code.
+
 ## Testing different client versions
 
 By default this tool test only one version of each Oracle driver. You may require to test different versions or Oracle client. Version of .NET assemblies loded from GAC are determined by policy files. 
