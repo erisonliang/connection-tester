@@ -31,7 +31,7 @@ c:\>ConnectionTester -h
 
 Usage:
 
-ConnectionTester.exe [<logon>] [+|-ODP] [+|-ADO] [+|-OleDB] [+|-ODBC] [+|-DevArt] [+|-Progress] [+|-CData] [+|-all] [wait] [cs]
+ConnectionTester.exe [<logon>] [+|-ODP] [+|-ODPM] [+|-ADO] [+|-OleDB] [+|-ODBC] [+|-DevArt] [+|-Progress] [+|-CData] [+|-all] [wait] [cs]
 
    <logon> is <username>[/<password>]@<connect_identifier> (same as SQL*Plus)
 
@@ -50,6 +50,8 @@ ConnectionTester.exe [<logon>] [+|-ODP] [+|-ADO] [+|-OleDB] [+|-ODBC] [+|-DevArt
    cs: Print ConnectionString for each connection (Consider security, password is shown as clear text)
 
    Switches are not case-sensitive
+   
+   Default drivers to be tested: ODP, ODPM, ADO, OleDB, ODBC
 
 Example:
 
@@ -90,7 +92,7 @@ ConnectionTester_x86.exe scott/tiger@ora1
 - ODBC Driver for Oracle OCI from [CData](https://www.cdata.com/drivers/oracledb/odbc/)
 - ODBC Oracle Driver with SQL Connector from [Simba](https://www.simba.com/drivers/oracle-odbc-jdbc/)
 
-All ODBC drviers are tested directly, i.e. "DSN-less". It only tests the actual ODBC driver, not the ODBC DSN Data Soucre. Thus no DSN entry is required in your ODBC Data Source Administrator.
+All ODBC drivers are tested directly, i.e. "DSN-less". It only tests the actual ODBC driver, not the ODBC DSN Data Source. Thus no DSN entry is required in your ODBC Data Source Administrator.
 
 ## Known issues
 
@@ -102,7 +104,7 @@ By default this tool test only one version of each Oracle driver. You may requir
 
 In order to test **all** versions of *Oracle Data Provider for .NET* use the `.config` files (included in "ConnectionTester-Full.zip") and set `<publisherPolicy apply="no"/>` accordingly. Multi version testing is only available only for the *"Oracle Data Provider for .NET Driver"* and *"Oracle Data Provider for .NET Managed Driver"* providers.
 
-In most use cases the .NET `.config` are not required. Release "ConnectionTester.zip" comes without them.
+In most use cases the .NET `.config` files are not required. Release "ConnectionTester.zip" comes without them.
 
 
 
