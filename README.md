@@ -43,6 +43,7 @@ ConnectionTester.exe [<logon>] [+|-ODP] [+|-ODPM] [+|-ADO] [+|-OleDB] [+|-ODBC] 
    +|-DevArt: Test (+) or skip (-) Devart dotConnect
    +|-Progress: Test (+) or skip (-) Progress DataDirect Connect for ADO.NET
    +|-CData: Test (+) or skip (-) CData ADO.NET Provider for Oracle OCI
+   +|-Simba: Test (+) or skip (-) Simba ODBC Driver (only relevant in combination with '+ODBC')
    +|-all: Test (+) or skip (-) all possible Oracle providers/drivers, evaluated before other switches
    Default tested drivers are: ODP ODPM ADO OleDB ODBC
 
@@ -96,7 +97,7 @@ All ODBC drivers are tested directly, i.e. "DSN-less". It only tests the actual 
 
 ## Known issues
 
-When ODBC driver "Microsoft ODBC for Oracle" for 32-bit is tested and fails then the program terminates immediatly with an error. I don't managed to catch this error by code.
+When ODBC driver "Microsoft ODBC for Oracle" for 32-bit is tested and fails then error message window pops up. I don't managed to catch this error for console output.
 
 ## Testing different client versions
 
