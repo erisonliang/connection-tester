@@ -257,7 +257,7 @@ static class ConnectionTester
 
          if ( runProvider[CommandLineArgs.EnumProvider.ODBC] ) {
             runTest = true;
-            foreach ( EnumVendor vendor in Enum.GetValues(typeof(EnumVendor)) ) {
+            foreach ( EnumODBC vendor in Enum.GetValues(typeof(EnumODBC)) ) {
                foreach ( OdbcDdriver aDriver in GetODBC(vendor, runProvider) )
                   ConODBC(aDriver);
             }
@@ -287,7 +287,6 @@ static class ConnectionTester
          Console.ReadKey(true);
       }
 
-
    }
 
    /// <summary>
@@ -295,7 +294,7 @@ static class ConnectionTester
    /// </summary>
    /// <param name="vendor">The vendor of the driver. Currently Microsoft, Oracle, Devart and Progress are supported</param>
    /// <returns>List of ODBC driver locations</returns>
-   private static List<OdbcDdriver> GetODBC(EnumVendor vendor, Dictionary<CommandLineArgs.EnumProvider, bool> runProvider)
+   private static List<OdbcDdriver> GetODBC(EnumODBC vendor, Dictionary<CommandLineArgs.EnumProvider, bool> runProvider)
    {
       var res = new List<OdbcDdriver>();
 
@@ -303,33 +302,33 @@ static class ConnectionTester
       foreach ( string aDriver in rootKey.GetValueNames() ) {
          var theKey = Registry.LocalMachine.OpenSubKey("Software\\ODBC\\ODBCINST.INI", false).OpenSubKey(aDriver, false);
          if ( Array.IndexOf(theKey.GetValueNames(), "Driver") > -1 ) {
-            if ( vendor == EnumVendor.Oracle && theKey.GetValue("Driver").ToString().EndsWith("SQORA32.dll", StringComparison.CurrentCultureIgnoreCase) )
+            if ( vendor == EnumODBC.Oracle && theKey.GetValue("Driver").ToString().EndsWith("SQORA32.dll", StringComparison.CurrentCultureIgnoreCase) )
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "DBQ"));
 
-            if ( vendor == EnumVendor.Microsoft && theKey.GetValue("Driver").ToString().EndsWith("msorcl32.dll", StringComparison.CurrentCultureIgnoreCase) )
+            if ( vendor == EnumODBC.Microsoft && theKey.GetValue("Driver").ToString().EndsWith("msorcl32.dll", StringComparison.CurrentCultureIgnoreCase) )
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "Server"));
 
-            if ( vendor == EnumVendor.Devart && theKey.GetValue("Driver").ToString().EndsWith("DevartODBCOracle.dll", StringComparison.CurrentCultureIgnoreCase) )
+            if ( vendor == EnumODBC.Devart && theKey.GetValue("Driver").ToString().EndsWith("DevartODBCOracle.dll", StringComparison.CurrentCultureIgnoreCase) )
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "Server"));
 
             // Progress drivers are crap. DataSource is not taken from OID (LDAP), tnsnames.ora must not contain domain
-            if ( vendor == EnumVendor.Progress && Regex.IsMatch(theKey.GetValue("Driver").ToString(), @"ivora\d+.dll$", RegexOptions.IgnoreCase) ) // 32-bit version
+            if ( vendor == EnumODBC.Progress && Regex.IsMatch(theKey.GetValue("Driver").ToString(), @"ivora\d+.dll$", RegexOptions.IgnoreCase) ) // 32-bit version
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "ServerName"));
-            if ( vendor == EnumVendor.Progress && Regex.IsMatch(theKey.GetValue("Driver").ToString(), @"ddora\d+.dll$", RegexOptions.IgnoreCase) ) // 64-bit version
+            if ( vendor == EnumODBC.Progress && Regex.IsMatch(theKey.GetValue("Driver").ToString(), @"ddora\d+.dll$", RegexOptions.IgnoreCase) ) // 64-bit version
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "ServerName"));
 
             // Did not work: ERROR [IM006] [Microsoft][ODBC Driver Manager] Driver's SQLSetConnectAttr failed
-            if ( vendor == EnumVendor.EasySoft && theKey.GetValue("Driver").ToString().EndsWith("esoracle.dll", StringComparison.CurrentCultureIgnoreCase) ) // Oracle Call Interface (OCI) 
+            if ( vendor == EnumODBC.EasySoft && theKey.GetValue("Driver").ToString().EndsWith("esoracle.dll", StringComparison.CurrentCultureIgnoreCase) ) // Oracle Call Interface (OCI) 
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "Database", new Dictionary<string, string> { { "Server", db }, { "SID", db } }));
-            if ( vendor == EnumVendor.EasySoft && theKey.GetValue("Driver").ToString().EndsWith("esorawp.dll", StringComparison.CurrentCultureIgnoreCase) ) // Wire Protocol (WP)
+            if ( vendor == EnumODBC.EasySoft && theKey.GetValue("Driver").ToString().EndsWith("esorawp.dll", StringComparison.CurrentCultureIgnoreCase) ) // Wire Protocol (WP)
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "Database", new Dictionary<string, string> { { "Server", db }, { "SID", db } }));
 
-            if ( vendor == EnumVendor.CData && theKey.GetValue("Driver").ToString().EndsWith("CData.ODBC.OracleOci.dll", StringComparison.CurrentCultureIgnoreCase) )
+            if ( vendor == EnumODBC.CData && theKey.GetValue("Driver").ToString().EndsWith("CData.ODBC.OracleOci.dll", StringComparison.CurrentCultureIgnoreCase) )
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "Data Source"));
 
-            if ( vendor == EnumVendor.Simba && theKey.GetValue("Driver").ToString().EndsWith("OracleODBC_sb64.dll", StringComparison.CurrentCultureIgnoreCase) ) // 64-bit version
+            if ( vendor == EnumODBC.Simba && theKey.GetValue("Driver").ToString().EndsWith("OracleODBC_sb64.dll", StringComparison.CurrentCultureIgnoreCase) ) // 64-bit version
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "TNS"));
-            if ( vendor == EnumVendor.Simba && theKey.GetValue("Driver").ToString().EndsWith("OracleODBC_sb32.dll", StringComparison.CurrentCultureIgnoreCase) ) // 32-bit version
+            if ( vendor == EnumODBC.Simba && theKey.GetValue("Driver").ToString().EndsWith("OracleODBC_sb32.dll", StringComparison.CurrentCultureIgnoreCase) ) // 32-bit version
                res.Add(new OdbcDdriver(aDriver, theKey.GetValue("Driver").ToString(), "TNS"));
          }
          theKey.Close();
@@ -337,11 +336,12 @@ static class ConnectionTester
       rootKey.Close();
       if ( res.Count == 0 ) {
          var missingDriver = false;
-         missingDriver |= vendor == EnumVendor.Progress && runProvider[CommandLineArgs.EnumProvider.Progress];
-         missingDriver |= vendor == EnumVendor.Devart && runProvider[CommandLineArgs.EnumProvider.Devart];
-         missingDriver |= vendor == EnumVendor.CData && runProvider[CommandLineArgs.EnumProvider.CData];
-         missingDriver |= vendor == EnumVendor.Microsoft && !Environment.Is64BitProcess;
-         missingDriver |= vendor == EnumVendor.Oracle;
+         missingDriver |= vendor == EnumODBC.Progress && runProvider[CommandLineArgs.EnumProvider.Progress];
+         missingDriver |= vendor == EnumODBC.Devart && runProvider[CommandLineArgs.EnumProvider.Devart];
+         missingDriver |= vendor == EnumODBC.CData && runProvider[CommandLineArgs.EnumProvider.CData];
+         missingDriver |= vendor == EnumODBC.Simba && runProvider[CommandLineArgs.EnumProvider.Simba];         
+         missingDriver |= vendor == EnumODBC.Microsoft && !Environment.Is64BitProcess;
+         missingDriver |= vendor == EnumODBC.Oracle;
          if ( missingDriver ) {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Did not find any ODBC driver for \"{0}\"", vendor.ToString());
@@ -931,7 +931,7 @@ static class ConnectionTester
    }
 
 
-   enum EnumVendor: byte
+   enum EnumODBC: byte
    {
       Oracle,
       Microsoft,
