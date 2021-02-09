@@ -54,6 +54,7 @@ namespace Launcher
                Console.WriteLine("   +|-DevArt: Test (+) or skip (-) Devart dotConnect");
                Console.WriteLine("   +|-Progress: Test (+) or skip (-) Progress DataDirect Connect for ADO.NET");
                Console.WriteLine("   +|-CData: Test (+) or skip (-) CData ADO.NET Provider for Oracle OCI");
+               Console.WriteLine("   +|-Simba: Test (+) or skip (-) Simba ODBC Driver (only relevant in combination with '+ODBC')");
                Console.WriteLine("   +|-all: Test all possible Oracle providers/drivers, evaluated before other switches");
                Console.WriteLine("   Default tested drivers are: ODP ODPM ADO OleDB ODBC\n");
                Console.WriteLine("   wait: Wait for key stroke after each connetion");
@@ -79,6 +80,7 @@ namespace Launcher
                this.Provider[EnumProvider.ADOforOracle] = arg.Substring(0, 1) == "+";
                this.Provider[EnumProvider.Progress] = arg.Substring(0, 1) == "+";
                this.Provider[EnumProvider.CData] = arg.Substring(0, 1) == "+";
+               this.Provider[EnumProvider.Simba] = arg.Substring(0, 1) == "+";
             } else {
                re = Regex.Match(arg, "^(.+)/(.*)@(.+)$");
                if ( re.Success ) {
@@ -115,6 +117,8 @@ namespace Launcher
                   this.Provider[EnumProvider.Progress] = arg.Substring(0, 1) == "+";
                if ( arg.Substring(1).Equals("cdata", StringComparison.InvariantCultureIgnoreCase) )
                   this.Provider[EnumProvider.CData] = arg.Substring(0, 1) == "+";
+               if ( arg.Substring(1).Equals("simba", StringComparison.InvariantCultureIgnoreCase) )
+                  this.Provider[EnumProvider.Simba] = arg.Substring(0, 1) == "+";
             }
          }
 
@@ -163,7 +167,8 @@ namespace Launcher
          Devart,
          ADOforOracle,
          Progress,
-         CData
+         CData,
+         Simba
       }
 
 
