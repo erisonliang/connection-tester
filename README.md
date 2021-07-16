@@ -91,7 +91,7 @@ ConnectionTester_x86.exe scott/tiger@ora1
 - ODBC Oracle Driver from [Easysoft](https://www.easysoft.com/products/data_access/odbc_oracle_driver/index.html)
 - ODBC Oracle WP Driver from Easysoft
 - ODBC Driver for Oracle OCI from [CData](https://www.cdata.com/drivers/oracledb/odbc/)
-- ODBC Oracle Driver with SQL Connector from [Simba](https://www.simba.com/drivers/oracle-odbc-jdbc/)
+- ODBC Oracle Driver with SQL Connector from [Magnitude, formerly Simba](https://www.magnitude.com/drivers/oracle-odbc-jdbc)
 
 All ODBC drivers are tested directly, i.e. "DSN-less". It only tests the actual ODBC driver, not the ODBC DSN Data Source. Thus no DSN entry is required in your ODBC Data Source Administrator.
 
