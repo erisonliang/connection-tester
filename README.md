@@ -3,6 +3,79 @@ Testing various Oracle client installation and drivers in Windows
 
 Installing an Oracle client can be a challenge. Sometimes you install the Oracle client and drivers but your application fails to connect to the Oracle database. This small tool helps you to find the problem in your Oracle client installation. 
 
+In principle the application runs this (fairly simplified) code:
+
+```
+ var connectString = "Driver={Oracle in OraClient11g_home1};Uid=<usernme>;Pwd=<secret>;DBQ=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={Microsoft ODBC for Oracle};Uid=<usernme>;Pwd=<secret>;Server=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Provider=OraOLEDB.Oracle;Data Source=<database>;Password=<secret>;User ID=<usernme>";
+ var con = new System.Data.OleDb.OleDbConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Provider=MSDAORA;Data Source=<database>;Password=<secret>;User ID=<usernme>";
+ var con = new System.Data.OleDb.OleDbConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new System.Data.OracleClient.OracleConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new Oracle.DataAccess.Client.OracleConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new Oracle.ManagedDataAccess.Client.OracleConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new Devart.Data.Oracle.OracleConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Provider=OracleClient;Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new Devart.Data.Universal.UniConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={Devart ODBC Driver for Oracle};Uid=<usernme>;Pwd=<secret>;Server=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User ID=<usernme>;Password=<secret>";
+ var con = new DDTek.Oracle.OracleConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={DataDirect 8.0 Oracle Wire Protocol};Uid=<usernme>;Pwd=<secret>;ServerName=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={Easysoft ODBC-Oracle Driver};Database=<database>;Uid=<usernme>;Pwd=<secret>;Server=<database>;SID=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={Easysoft ODBC-Oracle WP Driver};Database=<database>;Uid=<usernme>;Pwd=<secret>;Server=<database>;SID=<database>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Data Source=<database>;User=<usernme>;Password=<secret>";
+ var con = new System.Data.CData.OracleOci.OracleOciConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={CData ODBC Driver for Oracle OCI};Data Source=<database>;User=<usernme>;Password=<secret>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+ var connectString = "Driver={Simba Oracle ODBC Driver};TNS=<database>;UID=<usernme>;PWD=<secret>";
+ var con = new System.Data.Odbc.OdbcConnection(connectString);
+ con.Open();
+ 
+```
+
 ## Common problems in Oracle client installations
 
 - You mix 32-bit and 64-bit assemblies. 
