@@ -103,7 +103,7 @@ When ODBC driver "Microsoft ODBC for Oracle" for 32-bit is tested and fails then
 
 By default this tool test only one version of each Oracle driver. You may require to test different versions or Oracle client. Version of .NET assemblies loded from GAC are determined by policy files. 
 
-In order to test **all** versions of *Oracle Data Provider for .NET* use the `.config` files (included in "ConnectionTester-Full.zip") and set `<publisherPolicy apply="no"/>` accordingly. Multi version testing is only available only for the *"Oracle Data Provider for .NET Driver"* and *"Oracle Data Provider for .NET Managed Driver"* providers.
+In order to test **all** versions of *Oracle Data Provider for .NET* use the `.config` files (included in "ConnectionTester-Full.zip") and set `<publisherPolicy apply="no"/>` accordingly. Multi version testing is only available for the *"Oracle Data Provider for .NET Driver"* and *"Oracle Data Provider for .NET Managed Driver"* providers.
 
 In most use cases the .NET `.config` files are not required. Release "ConnectionTester.zip" comes without them.
 
