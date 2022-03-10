@@ -153,7 +153,7 @@ ConnectionTester_x86.exe scott/tiger@ora1
 - dotConnect Universal from Devart (uses deprecated System.Data.OracleClient)
 - DataDirect Connect for ADO.NET from [Progress](https://www.progress.com/connectors/oracle-database)
 - ADO.NET Provider for Oracle OCI from [CData](https://www.cdata.com/drivers/oracledb/)
-
+- Oracle Data Provider for .NET (ODP.NET) **Core** is **not supported** yet
 
 ## Supported ODBC drivers
 
